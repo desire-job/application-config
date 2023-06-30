@@ -43,6 +43,13 @@ spring:
     port: 6379
     password: admin  
 
+app:
+  default:
+    admin:
+      username: super_admin
+      password: super_admin
+      email: apach.dima@gmail.com
+
 springdoc:
   api-docs:
     path: /api-docs    
