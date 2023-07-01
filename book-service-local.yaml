@@ -5,6 +5,10 @@ spring:
     hibernate:
       ddl-auto: validate
     open-in-view: false
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
   liquibase:
     change-log: classpath:db/db.changelog.xml
   datasource:
