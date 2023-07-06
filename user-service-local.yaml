@@ -58,7 +58,7 @@ app:
       url: http://localhost:8181/auth/realms/desire-job/protocol/openid-connect/token
     grant-type: password
     client-id: user-service
-    client-secret: BY5O7PoKVFV297WjOQVgviYBi7ecLTSR
+    client-secret: Z0YR8LkhZgGAAK9vqpI05vSyZzMNiyPp
 
 springdoc:
   api-docs:
