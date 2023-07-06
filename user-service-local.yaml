@@ -53,6 +53,12 @@ app:
       username: super_admin
       password: super_admin
       email: apach.dima@gmail.com
+  keycloak:
+    login:
+      url: http://localhost:8181/auth/realms/desire-job/protocol/openid-connect/token
+    grant-type: password
+    client-id: user-service
+    client-secret: BY5O7PoKVFV297WjOQVgviYBi7ecLTSR
 
 springdoc:
   api-docs:
@@ -75,6 +81,14 @@ feign:
       enabled: true
   hystrix:
     enabled: true
+
+#Keycloak authorization properties
+keycloak:
+  realm: desire-job
+  resource: user-service
+  auth-server-url: http://localhost:8181/auth
+  ssl-required: external
+  use-resource-role-mappings: true
 
 server:
   port: 8084
