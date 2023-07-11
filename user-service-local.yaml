@@ -3,6 +3,8 @@ spring:
     name: user-service  
   security:
     oauth2:
+      client:
+        accessTokenUri: http://localhost:8084/user-service/oauth/token
       resource:
         user-info-uri: http://localhost:8080/user-service/api/v1/auth/current-user
         token-info-uri: http://localhost:8080/user-service/oauth/check_token
