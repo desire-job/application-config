@@ -1,6 +1,17 @@
 spring:
   application:
     name: user-service  
+  security:
+    oauth2:
+      client:
+        clientId: user-service
+        clientSecret: 1234
+        accessTokenUri: http://localhost:8084/user-service/oauth/token
+        grant-type: client_credentials
+        scope: server
+      resource:
+        user-info-uri: http://localhost:8080/user-service/api/v1/auth/current-user
+        token-info-uri: http://localhost:8080/user-service/oauth/check_token
   jpa:
     hibernate:
       ddl-auto: validate
@@ -37,15 +48,6 @@ spring:
     port: 5672
     username: admin
     password: admin
-  session:
-    store-type: redis
-    redis:
-      flush-mode: on_save
-      namespace: spring:session:template
-  redis:
-    host: localhost
-    port: 6379
-    password: admin  
 
 app:
   default:
@@ -81,11 +83,3 @@ server:
   forward-headers-strategy: framework
   servlet:
     context-path: /user-service
-    session:
-      cookie:
-        path: /
-        name: SESSION
-        http-only: true 
-        domain: localhost
-        secure: true 
-      timeout: 3600    
