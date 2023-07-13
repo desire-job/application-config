@@ -1,6 +1,10 @@
 spring:
   application:
     name: book-service
+  security:
+    oauth2:
+      resource:
+        user-info-uri: https://localhost:8084/user-service/api/v1/auth/current-user
   jpa:
     hibernate:
       ddl-auto: validate
