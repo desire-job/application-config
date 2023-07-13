@@ -3,6 +3,9 @@ spring:
     name: book-service
   security:
     oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://localhost:8084/user-service
       resource:
         jwt:
           keyUri: https://localhost:8084/user-service/oauth/token_key
