@@ -5,7 +5,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://localhost:8084/user-service
+          issuer-uri: https://localhost:8084/user-service/oauth/token
       resource:
         jwt:
           keyUri: https://localhost:8084/user-service/oauth/token_key
