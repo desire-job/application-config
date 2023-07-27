@@ -12,7 +12,7 @@ spring:
   liquibase:
     change-log: classpath:db/db.changelog.xml
   datasource:
-    url: jdbc:postgresql://localhost:54320/user_service_db
+    url: jdbc:postgresql://localhost:54320/keycloak_db
     username: postgres
     password: root
   swagger:
@@ -37,22 +37,6 @@ spring:
     port: 5672
     username: admin
     password: admin
-  session:
-    store-type: redis
-    redis:
-      flush-mode: on_save
-      namespace: spring:session:template
-  redis:
-    host: localhost
-    port: 6379
-    password: admin  
-
-app:
-  default:
-    admin:
-      username: super_admin
-      password: super_admin
-      email: apach.dima@gmail.com
 
 springdoc:
   api-docs:
@@ -81,11 +65,3 @@ server:
   forward-headers-strategy: framework
   servlet:
     context-path: /user-service
-    session:
-      cookie:
-        path: /
-        name: SESSION
-        http-only: true 
-        domain: localhost
-        secure: true 
-      timeout: 3600    
