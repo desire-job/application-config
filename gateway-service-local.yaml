@@ -6,20 +6,25 @@ spring:
       discovery:
         locator:
           enabled: true
-      default-filters: TokenRelay=
       routes:
         - id: discovery-service
           uri: localhost:8082/discovery-service
           predicates:
           - Path=/discovery-service/**
+          filters:
+          - TokenRelay=
         - id: book-service
           uri: localhost:8083/book-service
           predicates:
           - Path=/book-service/**
+          filters:
+          - TokenRelay=
         - id: user-service
           uri: localhost:8084/user-service
           predicates:
           - Path=/user-service/**
+          filters:
+          - TokenRelay=
   sleuth:
     sampler:
       probability: 1.0
