@@ -13,18 +13,21 @@ spring:
           - Path=/discovery-service/**
           filters:
           - TokenRelay=
+          - RemoveRequestHeader=Cookie
         - id: book-service
           uri: localhost:8083/book-service
           predicates:
           - Path=/book-service/**
           filters:
           - TokenRelay=
+          - RemoveRequestHeader=Cookie
         - id: user-service
           uri: localhost:8084/user-service
           predicates:
           - Path=/user-service/**
           filters:
           - TokenRelay=
+          - RemoveRequestHeader=Cookie
   sleuth:
     sampler:
       probability: 1.0
