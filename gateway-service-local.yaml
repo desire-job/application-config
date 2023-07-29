@@ -8,21 +8,21 @@ spring:
           enabled: true
       routes:
         - id: discovery-service
-          uri: localhost:8082/discovery-service
+          uri: http://localhost:8082/discovery-service
           predicates:
           - Path=/discovery-service/**
           filters:
           - TokenRelay=
           - RemoveRequestHeader=Cookie
         - id: book-service
-          uri: localhost:8083/book-service
+          uri: http://localhost:8083/book-service
           predicates:
           - Path=/book-service/**
           filters:
           - TokenRelay=
           - RemoveRequestHeader=Cookie
         - id: user-service
-          uri: localhost:8084/user-service
+          uri: http://localhost:8084/user-service
           predicates:
           - Path=/user-service/**
           filters:
