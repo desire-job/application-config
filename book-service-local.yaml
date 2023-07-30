@@ -65,6 +65,12 @@ eureka:
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8082/discovery-service/eureka/
 
+jwt:
+  auth:
+    converter:
+      resource-id: desire-job-client
+      principal-attribute: preferred_username
+
 server:  
   port: 8083
   forward-headers-strategy: framework

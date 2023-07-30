@@ -69,6 +69,12 @@ feign:
   hystrix:
     enabled: true
 
+jwt:
+  auth:
+    converter:
+      resource-id: desire-job-client
+      principal-attribute: preferred_username
+
 server:
   port: 8084
   forward-headers-strategy: framework
