@@ -1,6 +1,11 @@
 spring:
   application:
     name: book-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8181/realms/desire-job
   jpa:
     hibernate:
       ddl-auto: validate
