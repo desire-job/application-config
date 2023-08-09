@@ -3,10 +3,6 @@ spring:
     name: user-service  
   security:
     oauth2:
-      client:
-        provider:
-          keycloak:
-            token-uri: http://localhost:8181/realms/desire-job/protocol/openid-connect/token
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8181/realms/desire-job
@@ -21,7 +17,7 @@ spring:
   liquibase:
     change-log: classpath:db/db.changelog.xml
   datasource:
-    url: jdbc:postgresql://localhost:54320/keycloak_db
+    url: jdbc:postgresql://localhost:54320/auth_server_db
     username: postgres
     password: root
   swagger:
