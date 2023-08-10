@@ -65,24 +65,14 @@ eureka:
 
 
 springdoc:
-  enable-native-support: true
   api-docs:
-#    enabled: true
-#    path: /api-docs
-#    swagger-ui:
-#    enabled: true
-#    path: /swagger-ui.html
-#    config-url: /v3/api-docs/swagger-config
+    enabled: true
+  swagger-ui:
     urls:
-#      - url: /api-docs
-#        name: API Gateway Service
-#        primaryName: API Gateway Service
-      - url: /user-service/api-docs
-        name: User Service
-        primaryName: User Service
-      - url: /book-service/api-docs
-        name: Book Service
-        primaryName: Book Service
+      - name: book-service
+        url: /book-service/api-docs
+      - name: user-service
+        url: /user-service/api-docs
 
 server:
   port: 8080
