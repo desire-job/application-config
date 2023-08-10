@@ -49,10 +49,15 @@ feign:
       enabled: true
   hystrix:
     enabled: true 
-    
+
+openapi:
+  service:
+    url: http://localhost:8080
 springdoc:
   api-docs:
-    path: /api-docs
+    path: /book-service/v3/api-docs
+  swagger-ui:
+    path: /book-service/swagger-ui.html
 
 eureka:
   instance:
