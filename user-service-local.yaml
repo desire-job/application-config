@@ -43,14 +43,9 @@ spring:
     username: admin
     password: admin
 
-openapi:
-  service:
-    url: http://localhost:8080
 springdoc:
   api-docs:
-    path: /user-service/v3/api-docs
-  swagger-ui:
-    path: /user-service/swagger-ui.html
+    path: /api-docs
 
 eureka:
   instance:

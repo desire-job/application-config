@@ -68,18 +68,19 @@ springdoc:
   enable-native-support: true
   api-docs:
     enabled: true
+    path: /api-docs
   swagger-ui:
     enabled: true
     path: /swagger-ui.html
-    config-url: /v3/api-docs/swagger-config
+#    config-url: /v3/api-docs/swagger-config
     urls:
-      - url: /v3/api-docs
+      - url: /api-docs
         name: API Gateway Service
         primaryName: API Gateway Service
-      - url: /user-service/v3/api-docs
+      - url: /user-service/api-docs
         name: User Service
         primaryName: User Service
-      - url: /book-service/v3/api-docs
+      - url: /book-service/api-docs
         name: Book Service
         primaryName: Book Service
 
