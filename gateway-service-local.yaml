@@ -71,12 +71,14 @@ eureka:
 
 
 springdoc:
+  enable-native-support: true
   api-docs:
     enabled: true
     path: /api-docs
   swagger-ui:
     enabled: true
     path: /swagger-ui.html
+    config-url: /api-docs/swagger-config
     urls:
       - name: book-service
         url: /book-service/api-docs
