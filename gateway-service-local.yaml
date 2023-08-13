@@ -89,6 +89,8 @@ springdoc:
         - /user-service/**
       display-name: User Service
   swagger-ui:
+    config-url: /api-docs/swagger-config
+    url: /api-docs
     urls:
       - name: book-service
         url: /book-service/api-docs
