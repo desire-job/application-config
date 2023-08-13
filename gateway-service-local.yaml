@@ -74,6 +74,8 @@ springdoc:
     path: /swagger-ui.html
     config-url: /api-docs/swagger-config
     urls:
+      - name: gateway
+        url: /api-docs
       - name: book-service
         url: /book-service/api-docs
       - name: user-service
