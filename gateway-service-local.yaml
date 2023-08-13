@@ -72,8 +72,8 @@ eureka:
 
 springdoc:
   enable-native-support: true
-  webjars:
-    prefix:
+#  webjars:
+#    prefix:
   api-docs:
     groups:
       enabled: true
