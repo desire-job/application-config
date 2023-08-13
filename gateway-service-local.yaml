@@ -35,6 +35,12 @@ spring:
           filters:
           - TokenRelay=
           - RemoveRequestHeader=Cookie
+        - id: openapi
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api-docs/**
+          filters:
+            - RewritePath=/api-docs/(?<path>.*), /$\{path}/api-docs
   sleuth:
     sampler:
       probability: 1.0
@@ -67,15 +73,23 @@ eureka:
 springdoc:
   enable-native-support: true
   api-docs:
+    groups:
+      enabled: true
     enabled: true
     path: /api-docs
+  group-configs:
+    - group: book-service
+      paths-to-match:
+        - /book-service/**
+      display-name: Book Service
+    - group: user-service
+      paths-to-match:
+        - /user-service/**
+      display-name: User Service
   swagger-ui:
-    enabled: true
-    path: /swagger-ui.html
     config-url: /api-docs/swagger-config
+    url: /api-docs
     urls:
-      - name: gateway
-        url: /api-docs
       - name: book-service
         url: /book-service/api-docs
       - name: user-service
