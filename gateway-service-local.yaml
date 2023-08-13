@@ -35,6 +35,12 @@ spring:
           filters:
           - TokenRelay=
           - RemoveRequestHeader=Cookie
+        - id: openapi
+          uri: http://localhost:8080
+          predicates:
+          - Path=/api-docs/**
+          filters:
+          - RewritePath=/api-docs/(?<path>.*), /$\{path}/api-docs
   sleuth:
     sampler:
       probability: 1.0
