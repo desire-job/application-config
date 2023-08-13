@@ -87,7 +87,7 @@ springdoc:
         - /user-service/**
       display-name: User Service
   swagger-ui:
-#    config-url: /api-docs/swagger-config
+    config-url: /api-docs/swagger-config
     url: /api-docs
 #    disable-swagger-default-url: true
 #    path: /index.html
