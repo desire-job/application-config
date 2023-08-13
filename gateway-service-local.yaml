@@ -35,12 +35,6 @@ spring:
           filters:
           - TokenRelay=
           - RemoveRequestHeader=Cookie
-        - id: openapi
-          uri: http://localhost:8080
-          predicates:
-          - Path=/api-docs/**
-          filters:
-          - RewritePath=/api-docs/(?<path>.*), /$\{path}/api-docs
   sleuth:
     sampler:
       probability: 1.0
@@ -73,10 +67,7 @@ eureka:
 springdoc:
   api-docs:
     enabled: true
-    path: /api-docs
   swagger-ui:
-    enabled: true
-    path: /swagger-ui.html
     urls:
       - name: book-service
         url: /book-service/api-docs
