@@ -90,6 +90,7 @@ springdoc:
     config-url: /api-docs/swagger-config
     url: /api-docs
     disable-swagger-default-url: true
+    path: /swagger-ui/index.html
     urls:
       - name: book-service
         url: /book-service/api-docs
